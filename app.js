@@ -17,17 +17,21 @@ attack(opp)
 
         if (this.accuracy > rdmN) 
         {
+            alert('We hit ' + this.firepower + ' on their ' + opp.hull + ' hull')
             console.log('We hit ' + this.firepower + ' on their ' + opp.hull + ' hull')
             opp.hull -= this.firepower;
             if (opp.hull <= 0) {
                 opp.alive = false;
+                alert('We eradicated the enemy!')
                 console.log('We eradicated the enemy!');
             }
         } 
         else 
         {
+            alert('We missed!')
             console.log('We missed!')
         }
+        alert('Alien has ' + opp.hull + ' hull left.')
         console.log('Alien has ' + opp.hull + ' hull left.');
     }
 }
@@ -45,17 +49,21 @@ attack(opp)
 
         if (this.accuracy > random)
         {
+            alert('They hit ' + this.firepower + ' on our ' + opp.hull + ' hull!')
             console.log('They hit ' + this.firepower + ' on our ' + opp.hull + ' hull!')
             opp.hull -= this.firepower;
             if (opp.hull <= 0) {
                 opp.alive = false;
+                alert('We have perished.')
                 console.log('We have perished.');
             }
         } 
         else 
         {
+            alert('They missed!')
             console.log('They missed!')
         }
+        alert('We have ' + opp.hull + ' hull left!')
         console.log('We have ' + opp.hull + ' hull left!');
     }
 }
@@ -65,7 +73,8 @@ function battle(we, enemy)
     for(let i = 0; i < enemy.length; i++)
     {
         if(we.alive){
-                  console.log("\n\nBattle " + (i+1))
+            alert("\n\nBattle " + (i+1))      
+            console.log("\n\nBattle " + (i+1))
         }
         while (we.alive && enemy[i].alive)
         {  
