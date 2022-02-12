@@ -71,14 +71,14 @@ attack(opp)
 let killerB = new USSSchwarzenegger(20, 5, 0.7)
 
 let enemies = [];
-for (let i = 0; i < 6; i++)
+for (let i = 0; i < Math.floor(Math.random() * 5) + 6; i++)
 {
     enemies[i] = new Enemy();
 }
 
 function continueBattle (){
-    let cont = prompt("Should we attack the enemy?", "Yes or No")
-        if(cont.toLowerCase() === "yes"){
+    let cont = prompt(`Should we attack the enemy? We have ${killerB.hull} HP left`, "Yes or No")
+        if(cont.toLowerCase() === "yes" && killerB.hull > 0){
           return true
      
       }else{
